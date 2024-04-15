@@ -16,5 +16,5 @@ phases:
  post_build:
    commands:
      - echo Build completed successfully
-     - aws s3 cp ant-sample.jar s3://test-artifact-bucket-mom/artifacts/  # Replace placeholders accordingly
+     - aws s3 cp /codebuild/output/$CODEBUILD_SRC_DIR/src/build/jar/ant-sample.jar s3://test-artifact-bucket-mom/artifacts/  # Replace placeholders accordingly
      # Add any post-build commands here

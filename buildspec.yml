@@ -16,5 +16,8 @@ phases:
  post_build:
    commands:
      - echo Build completed successfully
-     - aws s3 cp --debug ant-sample.jar s3://test-artifact-bucket-mom/artifacts/ --region ap-south-1  # Replace placeholders accordingly
      # Add any post-build commands here
+artifacts:
+  files:
+    - '**/*'
+  discarded-paths: yes

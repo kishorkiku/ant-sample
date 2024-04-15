@@ -1,0 +1,20 @@
+version: 0.2
+phases:
+ install:
+   runtime-versions:
+     java: corretto11
+   commands:
+     - echo Installing Ant
+ pre_build:
+   commands:
+     - echo Setting up environment
+     # Add any pre-build commands here
+ build:
+   commands:
+     - echo Building with Ant
+     - ant -f build.xml # Replace <path_to_your_build_file> with the path to your Ant build file
+ post_build:
+   commands:
+     - echo Build completed successfully
+     - aws s3 cp myapp.jar s3://test-artifact-bucket-mom/artifacts/myapp.jar  # Replace placeholders accordingly
+     # Add any post-build commands here
